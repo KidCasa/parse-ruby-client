@@ -4,6 +4,7 @@ require 'parse/error'
 require 'parse/util'
 
 require 'logger'
+require 'faraday-detailed_logger'
 
 module Parse
   # A class which encapsulates the HTTPS communication with the Parse
@@ -62,7 +63,7 @@ module Parse
               exceptions: @retried_exceptions
         c.use Faraday::ExtendedParseJson
 
-        c.response :logger, @logger unless @quiet
+        c.response :detailed_logger, @logger unless @quiet
 
         c.adapter Faraday.default_adapter
 

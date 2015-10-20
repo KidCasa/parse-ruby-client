@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 gem 'faraday', '~> 0.9.2'
 gem 'faraday_middleware', '~> 0.10.0'
+gem 'faraday-detailed_logger'
 
 group :development do
   gem 'bundler'
